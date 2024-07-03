@@ -1,0 +1,15 @@
+services:
+  data_processing:
+    build: ../
+    container_name: data_processing
+    environment:
+      DATA_SOURCE: ${DATA_SOURCE}
+      DATA_SINK: ${DATA_SINK}
+      DATA_SINK_SIZE: ${DATA_SINK_SIZE}
+    volumes:
+      - ./data:/app/data
+    networks:
+      - lahatrad_network
+
+networks:
+  lahatrad_network:
